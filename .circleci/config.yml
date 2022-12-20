@@ -19,7 +19,7 @@ jobs:
           command: curl -sS -L https://platform.algolia.net/public/install.sh | bash
       - run:
           name: Deploy to Platform
-          command: appcli environment deploy --environment platformsampleapp/<<parameters.env>>
+          command: appcli environment deploy
 
 workflows:
   deploy:
