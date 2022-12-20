@@ -1,0 +1,16 @@
+build:
+  - name: web
+http:
+  - target: web
+compute:
+  - name: web
+    port: 8080
+    replica: 2
+    size: nano
+  - name: worker
+    image:
+      external: busybox:1.33.1
+    replica: 2
+    size: nano
+    command:
+      ["sh", "-c", "while true; do echo 'Still here'; date; sleep 2; done"]
